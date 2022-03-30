@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body class="bg-lime-500">
-    <div class="grid grid-cols-2 overflow-hidden w-8/12 mt-14 rounded-md shadow-gray-300 shadow-sm mx-auto items-center justify-center">
-        <div>
+    <div class="grid md:grid-cols-2 overflow-hidden w-80  md:w-10/12 lg:w-8/12 mt-14 rounded-md shadow-gray-300 shadow-sm mx-auto items-center justify-center">
+        <div class="hidden md:block">
             <img src="{{ asset('img/img.jpg') }}" class="w-full h-full" alt="">
         </div>
-        <div class="bg-white h-full py-10 px-20">
+        <div class="bg-white h-full py-10 px-8 md:px-10 lg:px-20">
             <h1 class="text-3xl font-bold uppercase text-lime-300">Sign in</h1>
             @if (session('status'))
                     <p class="text-red-500 font-bold text-center my-3">{{ session('status') }}</p>

@@ -2,16 +2,16 @@
 @section('content')
     <main class="w-full h-screen overflow-y-scroll">
         @include('layouts.nav')
-        <div class="px-6">
-            <div class="mt-4 py-4 px-6 w-full rounded-md bg-white">
+        <div class="px-3 md:px-6">
+            <div class="mt-4 py-4 px-3 md:px-6 w-full rounded-md bg-white">
                 <div class="flex justify-center items-center gap-x-3">
-                    <a href="{{ route('share') }}" class="px-7 py-1.5 border-2 border-lime-500 text-lime-500 rounded-md font-bold">Sent</a>
-                    <a href="{{ route('recieved') }}" class="px-7 py-1.5 border-2 border-lime-500 text-lime-500 rounded-md font-bold">Recieve</a>
+                    <a href="{{ route('share') }}" class="px-5 py-1.5 border-2 border-lime-500 text-lime-500 rounded-md font-bold">Sent</a>
+                    <a href="{{ route('recieved') }}" class="px-4 py-1.5 border-2 border-lime-500 text-lime-500 rounded-md font-bold">Recieve</a>
                 </div>
                 <div class="w-full">
                     <div class="flex justify-between items-center mt-4">
-                        <h1 class="text-2xl font-bold">All Sent Files</h1>
-                        <span onclick="show_send()" class="cursor-pointer px-6 py-2.5 font-bold text-white bg-lime-500 rounded-md">Send new</span>
+                        <h1 class="text-xl md:text-2xl font-bold">All Sent Files</h1>
+                        <span onclick="show_send()" class="cursor-pointer px-5 py-2.5 font-bold text-white bg-lime-500 rounded-md">Send new</span>
                     </div>
                     <div class="mt-4">
                         @foreach ($sends as $send)
@@ -28,7 +28,7 @@
 
                             @foreach ($files as $file)
                             <div class="flex mt-2 items-center gap-x-3">
-                                <a href="{{ '/storage/shared_file/'.$file->file_name }}" download="true" class="px-4 py-1 shadow-md font-medium rounded-full flex items-center bg-lime-500 gap-x-1 w-32 text-center text-white">Download <i class="fa fa-arrow-down text-md"></i></a>
+                                <a href="{{ '/storage/shared_file/'.$file->file_name }}" download class="px-4 py-1 shadow-md font-medium rounded-full flex items-center bg-lime-500 gap-x-1 w-32 text-center text-white">Download <i class="fa fa-arrow-down text-md"></i></a>
                             </div>
                             @endforeach
                         </div>

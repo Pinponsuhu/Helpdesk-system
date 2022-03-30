@@ -10,14 +10,14 @@
                 </div>
                 <div class="w-full">
                     <div class="flex justify-between items-center mt-4">
-                        <h1 class="text-2xl font-bold">All Recieved Files</h1>
+                        <h1 class="text-xl md:text-2xl font-bold">All Recieved Files</h1>
                     </div>
                     <div class="mt-4">
                         @foreach ($recieves as $recieve)
                         <div class="py-2.5 my-1 bg-lime-50 px-4">
                             <h1 class="mb-0.5">{{ $recieve->subject }}</h1>
                             @php
-                                $sender = App\Models\User::find($recieve->reciever_id);
+                                $sender = App\Models\User::find($recieve->sender_id);
                             @endphp
                             <span class="text-sm block mb-0.5 text-gray-500">Sent by: {{ $sender->firstname . ' ' . $sender->lastname }}</span>
                             <span class="text-sm block mb-1.5 text-gray-500">Recieved date: {{ $recieve->created_at->format('d/m/Y') }}</span>
@@ -27,7 +27,7 @@
 
                             @foreach ($files as $file)
                                 <div class="flex mt-2 items-center gap-x-3">
-                                    <a href="{{ '/storage/shared_file/'.$file->file_name }}" download="true" class="px-4 py-1 shadow-md font-medium rounded-full flex items-center bg-lime-500 gap-x-1 w-32 text-center text-white">Download <i class="fa fa-arrow-down text-md"></i></a>
+                                    <a href="{{ '/storage/shared_file/'.$file->file_name }}" download class="px-4 py-1 shadow-md rounded-full flex items-center bg-lime-500 gap-x-1 w-32 text-center text-white">Download <i class="fa fa-arrow-down text-md"></i></a>
                                 </div>
                             @endforeach
                         </div>

@@ -21,8 +21,9 @@ class CreateUsersTable extends Migration
             $table->string('profile_picture');
             $table->string('department');
             $table->date('date_of_birth');
-            $table->string('staff_level');
             $table->string('gender');
+            $table->boolean('ticket_permission');
+            $table->boolean('is_admin');
             $table->string('phone_number')->unique();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class LoginStaff extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest');
+    }
     public function show(){
         return view('login');
     }

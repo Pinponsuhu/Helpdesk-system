@@ -1,11 +1,11 @@
 @extends('layouts.app')
 @section('content')
-    <main class="w-full">
+    <main class="w-full h-screen overflow-y-scroll">
         @include('layouts.nav')
-        <div class="px-6">
-            <div class="mt-4 py-4 px-6 w-full h-screen overflow-y-scroll rounded-md bg-white">
-                <h1 class="text-center font-bold text-3xl text-gray-900 mb-4">Generate Report</h1>
-                <form action="" class="w-5/12 mx-auto">
+        <div class="px-3 md:px-6">
+            <div class="mt-4 py-4 px-3 md:px-6 w-full h-screen overflow-y-scroll rounded-md bg-white">
+                <h1 class="text-center font-bold text-xl md:text-2xl text-gray-900 mb-4">Generate Report</h1>
+                <form action="/view/report" method="get" class="w-80 md:w-5/12 mx-auto">
                     @csrf
                     <div>
                         <label class="font-bold mb-2">From</label>
